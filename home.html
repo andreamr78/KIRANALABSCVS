@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
+    <script src="home.js"></script>
+    <script src="node_modules/papaparse/papaparse.js"></script>
+    <script src="node_modules/papaparse/papaparse.min.js"></script>
+    <title>PROYECTO CVS</title>
+</head>
+<body>
+      <div class="bg"></div>
+        <div class="bg bg2"></div>
+          <div class="bg bg3"></div>
+          <div class="content">
+            <div class="above-container">
+              <div class="main-container d-flex d-2">
+              <input type="file" id="csv-file" name="files" class="files"/>
+              </div>
+              <div class="container d-flex d-2" id="container"></div>
+            </div>
+        </div>
+
+
+</body>
+<style>
+  html {
+  height:100%;
+}
+  body{
+    font-family: monospace;
+    margin:0;
+  }
+
+  .files{
+    background-color:rgba(255,255,255,.8);
+    padding: 5px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow:0 0 .25em rgba(0,0,0,.25);
+    box-sizing:border-box;
+  }
+  input[type=file]::-webkit-file-upload-button{
+    border: none;
+    border-radius: 5px;
+
+    box-shadow:0 0 .25em rgba(0,0,0,.25);
+    box-sizing:border-box;
+    font-weight: bold;
+  }
+
+  input[type=file]::-webkit-file-upload-button:hover {
+  background-color:rgba(0,0,0,0.4);
+  opacity: 1;
+  transition: all 0.2s
+}
+  .btn{
+    background-color: red;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow:0 0 .25em rgba(0,0,0,.25);
+    box-sizing:border-box;
+  }
+
+  .bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+  .above-container{
+    margin-top: 20px;
+  }
+  .main-container{
+    height: auto;
+    align-content: center;
+  }
+
+  .container{
+    background-color:rgba(255,255,255,.8);
+    padding: 10px;
+    border-radius: 10px;
+    align-content: center;
+    box-shadow:0 0 .25em rgba(0,0,0,.25);
+    box-sizing:border-box;
+  }
+
+    table {
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+    border: 1px solid #d4d4d4;
+    height: auto;
+    background-color:rgba(255,255,255,.8);
+  }
+  tr:first-child td {
+    background-color:black;
+    font-weight: bold;
+    color: white;
+}
+    tr:first-child input {
+    background: black;
+    border: none !important;
+    font-size:0;
+}
+   
+  tr:nth-child(even) {
+    background: #d4d4d4;
+  }
+   
+  th, td {
+    padding: 10px 30px;
+    border: 1px solid #000;
+  }
+   
+  th {
+    border-bottom: 1px solid #d4d4d4;
+  }
+</style>
+</html>
